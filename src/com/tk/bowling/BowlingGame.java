@@ -17,6 +17,9 @@ public class BowlingGame {
             if (rolls[roll] == 10) {
                 score += rolls[roll];
                 roll++;
+            } else if (rolls[roll] + rolls[roll + 1] == 10) {
+                score += rolls[roll] + rolls[roll + 1] + rolls[roll + 2];
+                roll += 2;
             } else {
                 score += rolls[roll] + rolls[roll + 1];
                 roll += 2;

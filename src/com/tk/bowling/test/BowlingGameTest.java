@@ -31,4 +31,15 @@ public class BowlingGameTest {
         assertEquals(20, bowlingGame.score());
     }
 
+    @Test
+    public void testSpare() {
+        bowlingGame.roll(5);
+        bowlingGame.roll(5);
+        bowlingGame.roll(3);
+        for (int i = 0; i < 17; i++) {
+            bowlingGame.roll(0);
+        }
+        assertEquals(16, bowlingGame.score());
+    }
+
 }
