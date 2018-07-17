@@ -17,17 +17,13 @@ public class BowlingGameTest {
 
     @Test
     public void testAllMisses() {
-        for (int i = 0; i < 20; i++) {
-            bowlingGame.roll(0);
-        }
+        rollMany(0, 20);
         assertEquals(0, bowlingGame.score());
     }
 
     @Test
     public void testAllOnePin() {
-        for (int i = 0; i < 20; i++) {
-            bowlingGame.roll(1);
-        }
+        rollMany(1, 20);
         assertEquals(20, bowlingGame.score());
     }
 
@@ -36,10 +32,23 @@ public class BowlingGameTest {
         bowlingGame.roll(5);
         bowlingGame.roll(5);
         bowlingGame.roll(3);
-        for (int i = 0; i < 17; i++) {
-            bowlingGame.roll(0);
-        }
+        rollMany(0, 17);
         assertEquals(16, bowlingGame.score());
+    }
+
+    @Test
+    public void testStrike() {
+        bowlingGame.roll(10);
+        bowlingGame.roll(4);
+        bowlingGame.roll(2);
+        rollMany(0, 18);
+        assertEquals(22, bowlingGame.score());
+    }
+
+    public void rollMany(int pins, int times) {
+        for (int i = 0; i < times; i++) {
+            bowlingGame.roll(pins);
+        }
     }
 
 }

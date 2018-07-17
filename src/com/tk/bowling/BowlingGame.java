@@ -16,6 +16,8 @@ public class BowlingGame {
         for (int frame = 0; frame < 10; frame++) {
             if (rolls[roll] == 10) {
                 score += rolls[roll];
+                score += rolls[roll + 1];
+                score += rolls[roll + 2];
                 roll++;
             } else if (rolls[roll] + rolls[roll + 1] == 10) {
                 score += rolls[roll] + rolls[roll + 1] + rolls[roll + 2];
