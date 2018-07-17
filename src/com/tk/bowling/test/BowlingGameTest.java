@@ -11,6 +11,7 @@ public class BowlingGameTest {
         for (int i = 0; i < 20; i++) {
             bowlingGame.roll(0);
         }
+        bowlingGame.score();
     }
 
 }
