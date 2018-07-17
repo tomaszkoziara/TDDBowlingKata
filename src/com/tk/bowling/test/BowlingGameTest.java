@@ -3,6 +3,8 @@ package com.tk.bowling.test;
 import com.tk.bowling.BowlingGame;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class BowlingGameTest {
 
     @Test
@@ -11,7 +13,7 @@ public class BowlingGameTest {
         for (int i = 0; i < 20; i++) {
             bowlingGame.roll(0);
         }
-        bowlingGame.score();
+        assertEquals(0, bowlingGame.score());
     }
 
 }
